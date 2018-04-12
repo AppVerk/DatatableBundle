@@ -1,0 +1,35 @@
+{
+  "name": "app-verk/datatable",
+  "description": "Appverk datatable ajax response bundle",
+  "type": "symfony-bundle",
+  "autoload": {
+    "psr-4": {
+      "AppVerk\\DatatableBundle\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "Michał Jędraszczyk",
+      "email": "michal.jedraszczyk@appverk.com"
+    }
+  ],
+  "keywords": [
+    "datatable",
+  ],
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "php": "^7.0",
+    "doctrine/doctrine-bundle": "^1.6",
+    "doctrine/orm": "^2.5",
+    "incenteev/composer-parameter-handler": "^2.0",
+    "sensio/distribution-bundle": "^5.0.19",
+    "sensio/framework-extra-bundle": "*",
+    "symfony/symfony": "^3.0",
+    "egulias/email-validator": "^2.1",
+    "stof/doctrine-extensions-bundle": "^1.2",
+    "jms/serializer-bundle": "^2.0",
+    "app-verk/components": "dev-master"
+  }
+}
