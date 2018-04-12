@@ -1,5 +1,5 @@
 {
-  "name": "app-verk/datatable",
+  "name": "app-verk/datatable-bundle",
   "description": "Appverk datatable ajax response bundle",
   "type": "symfony-bundle",
   "autoload": {
