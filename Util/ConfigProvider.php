@@ -22,8 +22,8 @@ class ConfigProvider
         $this->container = $container;
     }
 
-    public function getTemplate(string $template) : string
+    public function getTemplate(string $group, string $template) : string
     {
-        return $this->container->getParameter("datatable.templates.$template");
+        return $this->container->getParameter("datatable.templates.$group.$template");
     }
 }

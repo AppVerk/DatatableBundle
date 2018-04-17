@@ -12,7 +12,8 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $rootNode = $treeBuilder->root('datatable', 'array')->children();
+        $rootNode = $treeBuilder->root('datatable', 'array')
+            ->children();
 
         $this->addTemplatesSection($rootNode);
 
@@ -23,12 +24,15 @@ class Configuration implements ConfigurationInterface
     {
         $rootNode
             ->arrayNode('templates')
-                ->children()
-                    ->scalarNode('field_bool')->isRequired()->end()
-                    ->scalarNode('field_collection')->isRequired()->end()
-                    ->scalarNode('field_object')->isRequired()->end()
-                    ->scalarNode('field_timestamps')->isRequired()->end()
-                    ->scalarNode('button_submit')->isRequired()->end()
+                ->prototype('array')
+                    ->children()
+                        ->scalarNode('field_bool')->isRequired()->end()
+                        ->scalarNode('field_collection')->isRequired()->end()
+                        ->scalarNode('field_object')->isRequired()->end()
+                        ->scalarNode('field_timestamps')->isRequired()->end()
+                        ->scalarNode('buttons')->isRequired()->end()
+                        ->scalarNode('group_checkbox')->isRequired()->end()
+                    ->end()
                 ->end()
             ->end();
     }
