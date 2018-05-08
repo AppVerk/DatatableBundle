@@ -83,8 +83,9 @@ class DatatableDataProvider
      */
     public function getData(QueryBuilder $query, $sortData)
     {
-        $start = (int)$this->request->get('start');
-        $limit = (int)$this->request->get('length');
+        $paginationData = $this->request->get('pagination');
+        $page = (int)($paginationData['page'] ?? 1);
+        $perpage = (int)($paginationData['perpage'] ?? 10);
 
         $order = null;
         if ($sortData) {
@@ -93,23 +94,19 @@ class DatatableDataProvider
 
         $query = $query->getQuery();
 
-        $page = ($start > 0) ? $start / 10 + 1 : 1;
+        if ($perpage == -1) {
+            $perpage = 10000;
+        }
 
-        if ($limit == -1) {
-            $limit = 10000;
-        }
-        if (!$limit) {
-            $limit = 10;
-        }
         /** @var SlidingPagination $pagination */
-        $pagination = $this->paginator->paginate($query, $page, $limit);
+        $pagination = $this->paginator->paginate($query, $page, $perpage);
 
         $data = [
             'meta' => [
                 'total'   => $pagination->getTotalItemCount(),
                 'page'    => $page,
-                'pages'   => 1,
-                'perpage' => -1,
+                'pages'   => $pagination->getPaginationData()['pageCount'],
+                'perpage' => $perpage,
             ],
             'data' => $pagination->getItems(),
         ];
