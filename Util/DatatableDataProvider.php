@@ -123,12 +123,16 @@ class DatatableDataProvider
     {
         if ($orderData) {
             $orderDir = $orderData['sort'];
+            $alias = $orderData['alias'] ?? $query->getAllAliases()[0];
+
             $orderField = lcfirst(str_replace("_", '', ucwords($orderData['field'], "_")));
 
-            $aliases = $query->getAllAliases();
-            $alias = $aliases[0];
-
-            $query->addOrderBy("$alias.$orderField", $orderDir);
+            if ($alias) {
+                $sort = sprintf('%s.%s', $alias, $orderField);
+            } else {
+                $sort = $orderField;
+            }
+            $query->addOrderBy($sort, $orderDir);
         }
 
         return $query;
