@@ -2,7 +2,6 @@
 
 namespace AppVerk\DatatableBundle\Util;
 
-use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\Pagination\SlidingPagination;
 use Knp\Component\Pager\Paginator;
