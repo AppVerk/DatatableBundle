@@ -30,6 +30,7 @@
     "egulias/email-validator": "^2.1",
     "stof/doctrine-extensions-bundle": "^1.2",
     "jms/serializer-bundle": "^2.0 || ^3.3",
-    "app-verk/components": "^2.0"
+    "app-verk/components": "^2.0",
+    "knplabs/knp-paginator-bundle": "^3.0"
   }
 }

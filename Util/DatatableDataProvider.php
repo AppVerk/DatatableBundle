@@ -40,11 +40,6 @@ class DatatableDataProvider
     private $router;
 
     /**
-     * @var EngineInterface
-     */
-    private $templating;
-
-    /**
      * @var Request
      */
     private $request;
@@ -58,13 +53,11 @@ class DatatableDataProvider
     public function __construct(
         RouterInterface $router,
         Paginator $paginator,
-        EngineInterface $templating,
         RequestStack $requestStack,
         ConfigProvider $configProvider
     ) {
         $this->router = $router;
         $this->paginator = $paginator;
-        $this->templating = $templating;
         $this->request = $requestStack->getCurrentRequest();
         $this->configProvider = $configProvider;
     }

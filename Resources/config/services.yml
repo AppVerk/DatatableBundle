@@ -4,6 +4,8 @@ services:
         autoconfigure: true
         public: false
 
+    Knp\Component\Pager\Paginator: '@knp_paginator'
+
     # makes classes in src/UserBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     AppVerk\DatatableBundle\:
