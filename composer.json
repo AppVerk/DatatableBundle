@@ -20,16 +20,16 @@
     "MIT"
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.2",
     "doctrine/doctrine-bundle": "^1.6",
     "doctrine/orm": "^2.5",
-    "incenteev/composer-parameter-handler": "^2.0",
-    "sensio/distribution-bundle": "^5.0.19",
+    "incenteev/composer-parameter-handler": "^2.1",
+    "symfony/flex": "^1.1",
     "sensio/framework-extra-bundle": "*",
-    "symfony/symfony": "^3.0",
+    "symfony/framework-bundle": "4.2.*",
     "egulias/email-validator": "^2.1",
     "stof/doctrine-extensions-bundle": "^1.2",
-    "jms/serializer-bundle": "^2.0",
+    "jms/serializer-bundle": "^2.0 || ^3.3",
     "app-verk/components": "^2.0"
   }
 }
