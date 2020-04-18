@@ -26,7 +26,7 @@
     "incenteev/composer-parameter-handler": "^2.1",
     "symfony/flex": "^1.1",
     "sensio/framework-extra-bundle": "*",
-    "symfony/framework-bundle": "4.2.*",
+    "symfony/framework-bundle": "4.2.* || 4.4.*",
     "egulias/email-validator": "^2.1",
     "stof/doctrine-extensions-bundle": "^1.2",
     "jms/serializer-bundle": "^2.0 || ^3.3",
