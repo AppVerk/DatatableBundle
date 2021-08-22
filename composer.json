@@ -20,7 +20,7 @@
     "MIT"
   ],
   "require": {
-    "php": "^7.2||^8.0",
+    "php": "7.4.*",
     "doctrine/doctrine-bundle": "*",
     "doctrine/orm": "*",
     "incenteev/composer-parameter-handler": "*",
