@@ -10,10 +10,13 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('datatable');
 
-        $rootNode = $treeBuilder->root('datatable', 'array')
-            ->children();
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->getRootNode()->children();
+        } else {
+            $rootNode = $treeBuilder->root('datatable', 'array')->children();
+        }
 
         $this->addTemplatesSection($rootNode);
 
@@ -24,16 +27,16 @@ class Configuration implements ConfigurationInterface
     {
         $rootNode
             ->arrayNode('templates')
-                ->prototype('array')
-                    ->children()
-                        ->scalarNode('field_bool')->isRequired()->end()
-                        ->scalarNode('field_collection')->isRequired()->end()
-                        ->scalarNode('field_object')->isRequired()->end()
-                        ->scalarNode('field_timestamps')->isRequired()->end()
-                        ->scalarNode('buttons')->isRequired()->end()
-                        ->scalarNode('group_checkbox')->isRequired()->end()
-                    ->end()
-                ->end()
+            ->prototype('array')
+            ->children()
+            ->scalarNode('field_bool')->isRequired()->end()
+            ->scalarNode('field_collection')->isRequired()->end()
+            ->scalarNode('field_object')->isRequired()->end()
+            ->scalarNode('field_timestamps')->isRequired()->end()
+            ->scalarNode('buttons')->isRequired()->end()
+            ->scalarNode('group_checkbox')->isRequired()->end()
+            ->end()
+            ->end()
             ->end();
     }
 }

@@ -26,11 +26,11 @@
     "incenteev/composer-parameter-handler": "*",
     "symfony/flex": "*",
     "sensio/framework-extra-bundle": "*",
-    "symfony/framework-bundle": "4.2.* || 4.4.*",
+    "symfony/framework-bundle": "4.2.* || 4.4.* || ^5",
     "egulias/email-validator": "*",
     "stof/doctrine-extensions-bundle": "*",
     "jms/serializer-bundle": "^2.0 || ^3.3",
-    "app-verk/components": "dev-master",
-    "knplabs/knp-paginator-bundle": "^3.0"
+    "app-verk/components": "dev-symfony-5.4",
+    "knplabs/knp-paginator-bundle": "^5.0"
   }
 }
